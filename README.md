@@ -1,10 +1,14 @@
+## LogAnalyse
+LogAnalyse is a simple python script that runs three queries to answer the three questions from the Udacity Course.
+
+
 ### Install
 Clone the repo and install Psycopg (http://initd.org/psycopg/docs/index.html)
 
 ### Run
 First add the view from down below and update config.json according to your set up. Then run Main.py
 
-## Views
+### Views
 ```sql 
 CREATE VIEW articlesViewCount AS
   select articles.author, articles.title, count(log.ip) as views

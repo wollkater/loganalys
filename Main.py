@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 
 import json
 import psycopg2
@@ -10,7 +11,11 @@ db_name = config_json.get("db_name")
 db_user = config_json.get("db_user")
 db_password = config_json.get("db_password")
 
-connection = psycopg2.connect(dbname=db_name, user=db_user, password=db_password, host=db_host, port=db_port)
+connection = psycopg2.connect(dbname=db_name,
+                              user=db_user,
+                              password=db_password,
+                              host=db_host,
+                              port=db_port)
 
 most_views_query = """
 select title, views
@@ -71,4 +76,3 @@ get_articles_ordered_by_views()
 get_most_popular_authors()
 
 get_error_prone_days()
-
